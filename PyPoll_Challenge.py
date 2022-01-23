@@ -1,10 +1,10 @@
 # The data we need to retrieve
 # 1. The total number of votes cast
 # 2. Counties Section
-# 3. A complete list of candidates who recieved votes
+# 3. A complete list of candidates who received votes
 # 4. The percentage of votes each candidate won
 # 5. The total number of votes each candidate won
-# 6. The winner of the elcetion based on popular vote.
+# 6. The winner of the election based on popular vote.
 # County options and county votes.
 county_options = []
 county_votes = {}
