@@ -35,4 +35,5 @@ Election Audit Summary
      The election commission can use this script to analyze any election because it has a standard set up that ensures accurate results by each county. If the voting machines change the way they report data (such as a column or row shift) you may have to update where the code grabs the data from. Also, if a file path changes due to data being stored on the cloud, then the script will need to get modified.
 
 Additional Commentary
+
      I struggled to get my code to run in VS Code. Spyder was able to run a part of the script, but I still could not get my results to properly display on the terminal of any interface. I manually typed up the county part to incorporate the numbers as part of this summary. Please see the attached pivot table (it provides the totals by county).
