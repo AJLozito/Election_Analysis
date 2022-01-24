@@ -6,6 +6,10 @@
 # 5. The total number of votes each candidate won
 # 6. The winner of the election based on popular vote.
 # County options and county votes.
+# Assign a variable to load a file from a path.
+file_to_load = os.path.join("C:\\", "Users", "ajloz", "Election_Analysis", "Resources", "election_results.csv")
+# Assign a variable to save the file to a path.
+file_to_save = os.path.join("C:\\", "Users", "ajloz", "Election_Analysis", "Election Analysis", "election_analysis.txt")
 county_options = []
 county_votes = {}
 # Track the Largest County Turnout
@@ -18,7 +22,7 @@ with open(file_to_load) as election_data:
     # Print each row in the CSV file.
     for row in file_reader:
         # Add to the total vote count.
-        total_votes += 1
+        county_votes += 1
         # Get the county name from each row.
         county_name = row[2]
         # If the county does not match any existing county, add the
@@ -30,11 +34,13 @@ with open(file_to_load) as election_data:
             county_votes[county_name] = 0
         # Add a vote to that county's count.
         county_votes[county_name] += 1
+        # Save the results to our text file.
+with open(file_to_save, "w") as txt_file:
     txt_file.write(election_results)
     for County_name in County_votes:
         # Retrieve vote count and percentage.
         votes = County_votes[County_name]
-        vote_percentage = float(votes) / float(total_votes) * 100
+        vote_percentage = float(votes) / float(county_votes) * 100
         County_results = (
             f"{County_name}: {vote_percentage:.1f}% ({votes:,})\n")
         # Print each County's voter count and percentage to the terminal.
@@ -50,6 +56,7 @@ file_to_load = os.path.join("C:\\", "Users", "ajloz", "Election_Analysis", "Reso
 file_to_save = os.path.join("C:\\", "Users", "ajloz", "Election_Analysis", "Election Analysis", "election_analysis.txt")
 # Initialize a total vote counter.
 total_votes = 0
+
 # Candidate options and candidate votes.
 candidate_options = []
 candidate_votes = {}
